@@ -8,6 +8,7 @@ function getComputerChoice() {
 function getPlayerSelection() {
     let preSelection = prompt("Rock, Paper or Scissors?");
     let selection = preSelection.toLowerCase().trim();
+    let count = 0;
     while (true) {
         if (
             selection === "rock" ||
@@ -16,6 +17,14 @@ function getPlayerSelection() {
         )
             break;
         else {
+            count++;
+            if (count === 3) {
+                alert("Clueless");
+                window.location.replace(
+                    "https://www.youtube.com/watch?v=dQw4w9WgXcQ://www.w3schools.com"
+                );
+                exit;
+            }
             alert("invalid input (type rock, paper or scissors!");
             preSelection = prompt("Rock, Paper or Scissors?");
             selection = preSelection.toLowerCase().trim();
@@ -97,8 +106,17 @@ function game(numOfGames) {
 
 function gameSet() {
     let set = 0;
+    let count = 0;
     set = prompt("How many wins do you want to play for?\nEnter a number:");
     while (isNaN(set)) {
+        count++;
+        if (count === 3) {
+            alert("Clueless");
+            window.location.replace(
+                "https://www.youtube.com/watch?v=dQw4w9WgXcQ://www.w3schools.com"
+            );
+            exit;
+        }
         set = prompt(
             `Invalid input!\nHow many wins do you want to play for?\nEnter a number:`
         );
