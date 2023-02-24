@@ -80,8 +80,7 @@ function playRound() {
     }
 }
 
-function game() {
-    const numOfGames = 3;
+function game(numOfGames) {
     let pWins = 0;
     let cWins = 0;
     let round = 0;
@@ -93,7 +92,8 @@ function game() {
         alert(`Player ${pWins} - ${cWins} Computer`);
     }
     console.log(`Game over! Player: ${pWins} - ${cWins} : Computer`);
-    console.log(`Game over! Player: ${pWins} - ${cWins} : Computer`);
+    alert(`Game over! \nPlayer: ${pWins} - ${cWins} : Computer`);
 }
 
-game();
+const set = prompt("How many wins do you want to play for?");
+game(set);
