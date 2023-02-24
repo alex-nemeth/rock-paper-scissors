@@ -7,7 +7,7 @@ function getComputerChoice() {
 
 function getPlayerSelection() {
     let preSelection = prompt("Rock, Paper or Scissors?");
-    let selection = preSelection.toLowerCase();
+    let selection = preSelection.toLowerCase().trim();
     while (true) {
         if (
             selection === "rock" ||
@@ -18,7 +18,7 @@ function getPlayerSelection() {
         else {
             alert("invalid input (type rock, paper or scissors!");
             preSelection = prompt("Rock, Paper or Scissors?");
-            selection = preSelection.toLowerCase();
+            selection = preSelection.toLowerCase().trim();
         }
     }
     return selection;
@@ -95,5 +95,14 @@ function game(numOfGames) {
     alert(`Game over! \nPlayer: ${pWins} - ${cWins} : Computer`);
 }
 
-const set = prompt("How many wins do you want to play for?");
-game(set);
+function gameSet() {
+    let set = 0;
+    set = prompt("How many wins do you want to play for?\nEnter a number:");
+    while (isNaN(set)) {
+        set = prompt(
+            `Invalid input!\nHow many wins do you want to play for?\nEnter a number:`
+        );
+    }
+    return set;
+}
+game(gameSet());
