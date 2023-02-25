@@ -3,7 +3,6 @@
 * {
     font-family: "Raleway", sans-serif;
 }
-
 body {
     background-color: #242424;
 }
@@ -45,18 +44,16 @@ body {
     font-size: 30px;
     font-weight: bold;
 }
-.buttons {
-    display: flex;
-    justify-content: center;
+
+.selection {
+    margin-bottom: 30px;
+    border-radius: 5px;
 }
 
-button {
-    margin: 10px;
-    width: 100px;
-    height: 50px;
-    font-weight: bold;
-    background-color: #5d5d5d;
-    color: white;
+.dwayne {
+    margin: 5px;
+    height: 180px;
+    width: 120px;
     border-width: 2px;
     border-color: rgb(191, 191, 191);
     border-radius: 5px;
@@ -80,9 +77,10 @@ button {
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 40%;
+    width: 25%;
     border-radius: 20px;
     color: white;
+    font-weight: bold;
 }
 
 .close {

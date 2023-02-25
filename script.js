@@ -64,7 +64,7 @@ const modal = document.getElementById("myModal");
 // popup close
 const span = document.getElementsByClassName("close")[0];
 const popup = document.querySelector(".popup");
-const buttons = document.querySelectorAll(".selection");
+const images = document.querySelectorAll(".dwayne");
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function () {
@@ -77,9 +77,9 @@ window.onclick = function (event) {
     }
 };
 
-buttons.forEach((button) =>
-    button.addEventListener("click", () => {
-        playerSelection = button.textContent;
+images.forEach((image) =>
+    image.addEventListener("click", () => {
+        playerSelection = image.dataset.choice;
         result = playRound(playerSelection);
         if (result === 1) {
             playerScore++;
@@ -106,5 +106,3 @@ buttons.forEach((button) =>
         }
     })
 );
-
-//game(gameSet());
