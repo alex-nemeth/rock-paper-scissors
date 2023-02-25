@@ -60,7 +60,22 @@ let playerScore = 0;
 let cpuScore = 0;
 let result;
 
+const modal = document.getElementById("myModal");
+// popup close
+const span = document.getElementsByClassName("close")[0];
+const popup = document.querySelector(".popup");
 const buttons = document.querySelectorAll(".selection");
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function () {
+    modal.style.display = "none";
+};
+// on click away
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+};
 
 buttons.forEach((button) =>
     button.addEventListener("click", () => {
@@ -73,6 +88,22 @@ buttons.forEach((button) =>
             cpuScore++;
         }
         scoreText.textContent = `${playerScore} - ${cpuScore}`;
+        if (playerScore === 5) {
+            popup.textContent = `You win with a score of ${playerScore} - ${cpuScore}!`;
+            modal.style.display = "block";
+            playerScore = 0;
+            cpuScore = 0;
+            scoreText.textContent = "";
+            gameText.textContent = "Rock, paper or scissors?";
+        }
+        if (cpuScore === 5) {
+            popup.textContent = `You lost with a score of ${playerScore} - ${cpuScore}!`;
+            modal.style.display = "block";
+            playerScore = 0;
+            cpuScore = 0;
+            scoreText.textContent = "";
+            gameText.textContent = "Rock, paper or scissors?";
+        }
     })
 );
 
